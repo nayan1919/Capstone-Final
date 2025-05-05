@@ -1,21 +1,22 @@
-// src/store/videoSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from '../api/axios'; // adjust path if needed
+import axios from '../api/axios'; // Import your Axios instance
 
-// Async thunk to fetch videos
+// ✅ Async thunk to fetch videos
 export const fetchVideos = createAsyncThunk('videos/fetchVideos', async () => {
-  const res = await axios.get('/videos'); // Assumes backend has GET /api/videos
+  const res = await axios.get('/videos'); // Token is automatically attached
   return res.data;
 });
 
+const initialState = {
+  videos: [],
+  selectedVideo: null,
+  loading: false,
+  error: null,
+};
+
 const videoSlice = createSlice({
   name: 'videos',
-  initialState: {
-    videos: [],
-    selectedVideo: null,
-    loading: false,
-    error: null,
-  },
+  initialState,
   reducers: {
     selectVideo: (state, action) => {
       state.selectedVideo = action.payload;
