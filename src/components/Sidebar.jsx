@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // ✅ Import Link
 import '../styles/styles.css';
 import {
   FaBars,
@@ -8,7 +9,8 @@ import {
   FaUser,
   FaMusic,
   FaFilm,
-  FaNewspaper
+  FaNewspaper,
+  FaUpload // ✅ Optional: Add Upload icon
 } from 'react-icons/fa';
 
 const Sidebar = () => {
@@ -34,6 +36,14 @@ const Sidebar = () => {
             <hr />
             <li><FaUser className="icon"/> <span className="item-text">You</span></li>
             <li><FaRegClock className="icon"/> <span className="item-text">History</span></li>
+
+            {/* Upload Link */}
+            <li>
+              <Link to="/upload" className="sidebar-link">
+                <FaUpload className="icon" />
+                <span className="item-text">Upload</span>
+              </Link>
+            </li>
           </ul>
         </aside>
       )}

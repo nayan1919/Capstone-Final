@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from '../api/axios'; // Import your Axios instance
+import axios from '../../api/axios'; // Import your Axios instance
 
 // ✅ Async thunk to fetch videos
 export const fetchVideos = createAsyncThunk('videos/fetchVideos', async () => {

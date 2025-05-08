@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchVideos } from '../store/videoSlice';
+import { fetchVideos } from "../redux/slices/videoSlice";
 import VideoCard from '../components/VideoCard';
 import '../styles/styles.css';
 
