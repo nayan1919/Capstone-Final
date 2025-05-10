@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import VideoPlayer from '../components/VideoPlayer';
 import CommentSection from '../components/CommentSection';
 import '../styles/styles.css';
@@ -10,21 +11,26 @@ const Watch = () => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    setVideo({ videoUrl: 'https://example.com/video.mp4', title: 'Sample Video' });
-    setComments([{ text: 'Nice video!' }]);
+    const fetchVideo = async () => {
+      const res = await axios.get(`http://localhost:5000/api/videos/${id}`);
+      setVideo(res.data);
+    };
+    fetchVideo();
   }, [id]);
-
-  const handleAddComment = (text) => {
-    setComments([...comments, { text }]);
-  };
 
   if (!video) return <div>Loading...</div>;
 
   return (
     <div className="watch-page">
-      <h2>{video.title}</h2>
-      <VideoPlayer videoUrl={video.videoUrl} />
-      <CommentSection comments={comments} onAdd={handleAddComment} />
+      <iframe
+        className="watch-player"
+        src={video.videoUrl}
+        title={video.title}
+        frameBorder="0"
+        allowFullScreen
+      ></iframe>
+      <h2 className="watch-title">{video.title}</h2>
+      <CommentSection comments={comments} onAdd={(text) => setComments([...comments, { text }])} />
     </div>
   );
 };

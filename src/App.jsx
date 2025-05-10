@@ -1,5 +1,5 @@
-import React from 'react';
-import {createBrowserRouter,RouterProvider,Outlet} from 'react-router-dom';
+import React, { useState } from 'react';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -11,15 +11,25 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import './styles/styles.css';
 
-const Layout = () => (
-  <>
-    <Header />
-    <Sidebar />
-    <div style={{ marginLeft: '200px', paddingTop: '60px' }}>
-      <Outlet />
-    </div>
-  </>
-);
+const Layout = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  return (
+    <>
+      <Header toggleSidebar={toggleSidebar} setSearchQuery={setSearchQuery} />
+      <Sidebar isOpen={isSidebarOpen} />
+      <div style={{ marginLeft: isSidebarOpen ? '200px' : '0', paddingTop: '60px' }}>
+        <Home searchQuery={searchQuery} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+      </div>
+    </>
+  );
+};
 
 const router = createBrowserRouter([
   {
