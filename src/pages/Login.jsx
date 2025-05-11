@@ -12,7 +12,7 @@ const Login = () => {
     try {
       const res = await axios.post('/auth/login', { email, password });
 
-      // ✅ Save token in localStorage
+      // Save token in localStorage
       localStorage.setItem('token', res.data.token);
 
       // Optional: Show a message or update auth state

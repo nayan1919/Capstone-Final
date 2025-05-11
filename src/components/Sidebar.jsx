@@ -12,7 +12,12 @@ const Sidebar = ({ isOpen }) => {
       {isOpen && (
         <aside className="sidebar">
           <ul>
-            <li><FaHome className="icon" /><span className="item-text">Home</span></li>
+            <li>
+              <Link to="/" className="sidebar-link">
+                <FaHome className="icon" />
+                <span className="item-text">Home</span>
+              </Link>
+            </li>
             <li><FaFire className="icon" /><span className="item-text">Trending</span></li>
             <li><FaMusic className="icon" /><span className="item-text">Music</span></li>
             <li><FaFilm className="icon" /><span className="item-text">Movies</span></li>

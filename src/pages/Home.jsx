@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import VideoCard from '../components/VideoCard';
-import Categories from '../components/Categories'; // ✅ New
+import Categories from '../components/Categories';
+import { useOutletContext } from 'react-router-dom';
 import '../styles/styles.css';
 
-const Home = ({ searchQuery, selectedCategory, setSelectedCategory }) => {
+const Home = () => {
+  const { searchQuery, selectedCategory, setSelectedCategory } = useOutletContext();
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

@@ -249,6 +249,72 @@ body {
   font-weight: bold;
 }
 
+/* upload */
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.upload-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+  background: black;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.upload-form input,
+.upload-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  resize: none;
+  transition: border-color 0.2s;
+}
+
+.upload-form input:focus,
+.upload-form textarea:focus {
+  border-color: #0073ff;
+  outline: none;
+}
+
+.upload-form textarea {
+  min-height: 100px;
+}
+
+.upload-btn {
+  padding: 12px;
+  background-color: #0073ff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.upload-btn:hover {
+  background-color: #0056cc;
+}
+
+
 @media (min-width: 576px) {
   .video-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -304,6 +370,69 @@ body {
 .watch-title {
   margin: 15px 0;
 }
+
+.watch-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.watch-main {
+  flex: 2;
+}
+
+.watch-sidebar {
+  flex: 1;
+  max-width: 350px;
+  overflow-y: auto;
+}
+
+.watch-title {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.watch-description {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.channel-name {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.like-dislike button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.related-video-card {
+  display: flex;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.related-thumb {
+  width: 120px;
+  height: 70px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.related-info h4 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+
+.related-info p {
+  font-size: 14px;
+  color: gray;
+  margin: 0;
+}
+
 
 
 

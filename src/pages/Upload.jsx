@@ -11,7 +11,7 @@ const Upload = () => {
     thumbnailUrl: '',
     videoUrl: '',
     description: '',
-    channelId: '', // Optional unless needed
+    channelId: '',
   });
 
   const handleChange = (e) => {
@@ -42,43 +42,45 @@ const Upload = () => {
   };
 
   return (
-    <div className="upload-form">
-      <h2>Upload Video</h2>
-      <input
-        type="text"
-        name="title"
-        placeholder="Video Title"
-        value={formData.title}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="thumbnailUrl"
-        placeholder="Thumbnail URL"
-        value={formData.thumbnailUrl}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="videoUrl"
-        placeholder="Video URL"
-        value={formData.videoUrl}
-        onChange={handleChange}
-      />
-      <textarea
-        name="description"
-        placeholder="Video Description"
-        value={formData.description}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="channelId"
-        placeholder="Channel ID (optional)"
-        value={formData.channelId}
-        onChange={handleChange}
-      />
-      <button onClick={handleUpload}>Upload</button>
+    <div className="upload-container">
+      <h2 className="upload-title">🎥 Upload a New Video</h2>
+      <div className="upload-form">
+        <input
+          type="text"
+          name="title"
+          placeholder="Video Title"
+          value={formData.title}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="thumbnailUrl"
+          placeholder="Thumbnail URL"
+          value={formData.thumbnailUrl}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="videoUrl"
+          placeholder="Video URL"
+          value={formData.videoUrl}
+          onChange={handleChange}
+        />
+        <textarea
+          name="description"
+          placeholder="Video Description"
+          value={formData.description}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="channelId"
+          placeholder="Channel ID (optional)"
+          value={formData.channelId}
+          onChange={handleChange}
+        />
+        <button className="upload-btn" onClick={handleUpload}>Upload</button>
+      </div>
     </div>
   );
 };

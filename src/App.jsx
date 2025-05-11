@@ -25,7 +25,8 @@ const Layout = () => {
       <Header toggleSidebar={toggleSidebar} setSearchQuery={setSearchQuery} />
       <Sidebar isOpen={isSidebarOpen} />
       <div style={{ marginLeft: isSidebarOpen ? '200px' : '0', paddingTop: '60px' }}>
-        <Home searchQuery={searchQuery} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+        {/* This renders the child routes like Home, Watch, etc. */}
+        <Outlet context={{ searchQuery, selectedCategory, setSelectedCategory }} />
       </div>
     </>
   );

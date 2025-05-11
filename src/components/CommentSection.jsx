@@ -2,23 +2,23 @@ import React, { useState } from 'react';
 import '../styles/styles.css';
 
 const CommentSection = ({ comments, onAdd }) => {
-  const [text, setText] = useState('');
+  const [commentText, setCommentText] = useState('');
 
-  const handleSubmit = () => {
-    if (text) {
-      onAdd(text);
-      setText('');
+  const handleAddComment = () => {
+    if (commentText) {
+      onAdd(commentText);
+      setCommentText('');
     }
   };
 
   return (
     <div className="comment-section">
       <textarea
-        value={text}
-        onChange={(e) => setText(e.target.value)}
+        value={commentText}
+        onChange={(e) => setCommentText(e.target.value)}
         placeholder="Add a comment"
-      ></textarea>
-      <button onClick={handleSubmit}>Post</button>
+      />
+      <button onClick={handleAddComment}>Comment</button>
       <ul>
         {comments.map((comment, index) => (
           <li key={index}>{comment.text}</li>

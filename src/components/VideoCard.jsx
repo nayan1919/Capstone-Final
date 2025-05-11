@@ -8,7 +8,7 @@ const VideoCard = ({ video }) => {
       <img src={video.thumbnailUrl} alt={video.title} />
       <div className="video-info">
         <h4>{video.title}</h4>
-        <p>{video.uploader?.username || 'Unknown Uploader'}</p>
+        <p>{video.uploader?.username || 'Nayan Dutta'}</p>
         <p>{video.views} views</p>
       </div>
     </Link>
