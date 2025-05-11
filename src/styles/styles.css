@@ -115,6 +115,88 @@ body {
   padding-left: 20px;
 }
 
+.right-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+.create-channel-btn {
+  padding: 6px 12px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 0%;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.create-channel-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10%;
+  border: 1px solid #ccc;
+  background-color: #2a2a2a;
+  color: white;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.cancel-btn,
+.upload-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.upload-btn {
+  background-color: #ff0000;
+  color: white;
+}
+
+
 
 /* Sidebar */
 
